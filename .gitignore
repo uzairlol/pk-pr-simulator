@@ -1,0 +1,7 @@
+﻿data/raw/
+data/interim/
+*.env
+.env.local
+wandb/
+*.ckpt
+*.pt
