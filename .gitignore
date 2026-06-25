@@ -5,3 +5,22 @@ data/interim/
 wandb/
 *.ckpt
 *.pt
+
+# Python / Poetry
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+.venv/
+dist/
+build/
+*.egg-info/
+
+# IDE
+.idea/
+.vscode/
+*.swp

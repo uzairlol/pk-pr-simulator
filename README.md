@@ -1,6 +1,4 @@
-# pk-pr-simulator
-
-Pakistan-focused **cohort-level** population opinion simulator for company PR scenario forecasting in the telecommunications sector.
+# Pakistan-focused **cohort-level** population opinion simulator for company PR scenario forecasting in the telecommunications sector.
 
 > This system is an **aggregate decision-support tool** — not a person-level prediction or targeting engine.
 
@@ -9,23 +7,35 @@ Pakistan-focused **cohort-level** population opinion simulator for company PR sc
 | Document | Description |
 |----------|-------------|
 | [Zero to Published Paper Pipeline](docs/Zero_to_Published_Paper_Pipeline.md) | Full 17-phase execution plan |
-| [Phase 1 Completion Record](docs/PHASE1_COMPLETION.md) | Phase 1 status and exit criteria |
+| [Phase 1 Completion Record](docs/PHASE1_COMPLETION.md) | Literature, charter, ethics, legal |
+| [Phase 2 Completion Record](docs/PHASE2_COMPLETION.md) | Requirements, ADRs, stack, architecture |
+| [Architecture](docs/architecture.md) | Mermaid diagrams and layer definitions |
+| [Requirements](docs/03-requirements.md) | Functional and non-functional requirements |
+| [ADRs](docs/decisions/README.md) | Architecture decision records |
 | [Project Charter](docs/01-project-charter.md) | Scope lock, non-goals, MVP success criteria |
 | [Data Legal Notes](docs/02-data-legal-notes.md) | ToS/legal review per data source |
 | [Ethics Application Draft](docs/03-ethics-application-draft.md) | IRB submission template |
 | [API Access Checklist](docs/04-api-access-checklist.md) | YouTube, Reddit, Meta, survey requests |
 | [Literature Index](docs/literature/README.md) | Literature matrix + Zotero tagging guide |
-| [Literature Matrix (xlsx)](docs/datasheets/Pakistan_PR_Simulation_Literature_Matrix.xlsx) | 105 indexed sources |
 
 ## Current Status
 
-**Phase 1** documentation is complete in-repo. Remaining Phase 1 actions require you:
+**Phase 2** complete: requirements locked, 4 ADRs written, Poetry stack installed, architecture diagram committed.
 
-1. Supervisor sign-off on the [project charter](docs/01-project-charter.md)
-2. University ethics/IRB submission using the [ethics draft](docs/03-ethics-application-draft.md)
-3. File API access applications per the [checklist](docs/04-api-access-checklist.md)
+**Phase 1** manual items still required before live data collection: supervisor sign-off, ethics/IRB approval, API applications.
 
-Do **not** begin real platform data collection until ethics approval is granted.
+## Quick Start
+
+```powershell
+# Python 3.10–3.12 required (PyTorch does not support 3.14)
+py -3.10 -m pip install poetry
+py -3.10 -m poetry config virtualenvs.in-project true
+py -3.10 -m poetry install
+copy .env.example .env
+
+docker compose up -d db    # Postgres on localhost:5432
+py -3.10 -m poetry run pytest tests/ -q
+```
 
 ## Repository Structure
 
